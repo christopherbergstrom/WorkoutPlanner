@@ -1,5 +1,9 @@
 var pop = new Pop();
+var gen = new Generate();
 var goalsSelect;
+var upper;
+var core;
+var lower;
 var arms;
 var shoulders;
 var chest;
@@ -23,6 +27,9 @@ window.onload = function()
   // window.print();
   body = document.querySelector("body");
   goalsSelect = document.getElementById("goalsSelect");
+  upper = document.getElementById("upper");
+  core = document.getElementById("core");
+  lower = document.getElementById("lower");
   arms = document.getElementById("arms");
   shoulders = document.getElementById("shoulders");
   chest = document.getElementById("chest");
@@ -126,183 +133,55 @@ function buildTable()
   table.appendChild(tr);
   var tr = document.createElement("tr");
   var td = document.createElement("td");
-  if (mon.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, mon.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (tues.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, tues.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (wed.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, wed.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (thurs.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, thurs.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (fri.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, fri.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (sat.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, sat.checked);
   tr.appendChild(td);
   var td = document.createElement("td");
-  if (sun.checked === true)
-  {
-    if (goalsSelect.value === "Fat Loss")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Lean Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Big Muscle")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Just Staying in Shape")
-    {
-      td.innerHTML=;
-    }
-    if (goalsSelect.value === "Cardio")
-    {
-      td.innerHTML=;
-    }
-  }
+  fill(td, sun.checked);
   tr.appendChild(td);
   table.appendChild(tr);
   container.appendChild(table)
   body.appendChild(container);
 }
-
-var fat = "";
+function fill(td, day)
+{
+  console.log(day);
+  console.log(goalsSelect.value);
+  if (day)
+  {
+    if (goalsSelect.value === "Fat Loss")
+    {
+      td.innerHTML=gen.fat(upper.checked, core.checked, lower.checked);
+    }
+    if (goalsSelect.value === "Lean Muscle")
+    {
+      td.innerHTML=gen.lean(arms.checked, shoulders.checked, chest.checked, back.checked, abs.checked, legsButt.checked);
+    }
+    if (goalsSelect.value === "Big Muscle")
+    {
+      td.innerHTML=gen.big(arms.checked, shoulders.checked, chest.checked, back.checked, abs.checked, legsButt.checked);
+    }
+    if (goalsSelect.value === "Just Staying in Shape")
+    {
+      td.innerHTML=gen.shape();
+    }
+    if (goalsSelect.value === "Cardio")
+    {
+      td.innerHTML=gen.cardio();
+    }
+  }
+}

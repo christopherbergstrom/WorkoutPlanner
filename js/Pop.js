@@ -50,9 +50,9 @@ Pop.prototype.muscle = function()
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
   check.setAttribute("value", "Shoulders");
-  check.setAttribute("id", "shoulder");
+  check.setAttribute("id", "shoulders");
   var span = document.createElement("span");
-  span.innerHTML=" Shoulder";
+  span.innerHTML=" Shoulders";
   focus.appendChild(check);
   focus.appendChild(span);
   var br = document.createElement("br");
