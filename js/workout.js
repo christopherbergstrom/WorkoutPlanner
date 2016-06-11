@@ -20,6 +20,8 @@ var sun;
 var btn;
 var body;
 var focus;
+// var message;
+var futureMessage="Do all of the excerises for as long as you can.";
 
 window.onload = function()
 {
@@ -45,48 +47,68 @@ window.onload = function()
   sun = document.getElementById("sun");
   btn = document.getElementById("btn");
   focus = document.getElementById("focus");
-  console.log(mon);
+  var message = document.createElement("div");
+  message.setAttribute("id", "message");
+  container.appendChild(message);
   btn.addEventListener("click", function()
   {
-    while (body.firstChild)
+    if (upper.checked || core.checked || lower.checked || arms.checked || shoulders.checked || chest.checked || back.checked || abs.checked || legsButt.checked)
     {
-      body.removeChild(body.firstChild);
+      if (mon.checked || tues.checked || wed.checked || thurs.checked || fri.checked || sat.checked || sun.checked)
+      {
+        while (body.firstChild)
+        {
+          body.removeChild(body.firstChild);
+        }
+        buildTable();
+      }
+      else
+      {
+        message.innerHTML="You need to select at least one day that you are available to workout."
+      }
     }
-    buildTable();
+    else
+    {
+      message.innerHTML="You need to select at least one muscle group that you want to workout."
+    }
   });
+  pop.muscle();
+  removeOptions();
   pop.fat();
-  console.log(upper);
 }
 function change()
 {
   if (goalsSelect.value === "Fat Loss")
   {
-    console.log("here");
+    futureMessage="Do all of the excerises for as long as you can.";
     removeOptions();
     pop.fat();
   }
   else if (goalsSelect.value === "Lean Muscle")
   {
+    futureMessage="Do 3 sets of 15 reps for all of the exercises with a weight that you are comfortable with.";
     removeOptions();
     pop.muscle();
   }
   else if (goalsSelect.value === "Big Muscle")
   {
+    futureMessage="Do 5 sets of 5 reps for all of the exercises with a weight that you are comfortable with.";
     removeOptions();
     pop.muscle();
   }
   else if (goalsSelect.value === "Just Staying in Shape")
   {
+    futureMessage="Do 2 sets of 10 reps for all of the exercises with a weight that you are comfortable with.";
     removeOptions();
   }
   else if (goalsSelect.value === "Cardio")
   {
+    futureMessage="Do one of the excerises for at least 30 minutes.";
     removeOptions();
   }
 }
 function removeOptions()
 {
-  console.log("removing");
   while (focus.firstChild)
   {
     focus.removeChild(focus.firstChild);
@@ -100,6 +122,9 @@ function buildTable()
   body.appendChild(top);
   var container = document.createElement("div");
   container.setAttribute("id", "container");
+  var message = document.createElement("div");
+  message.setAttribute("id", "message");
+  message.innerHTML=futureMessage;
   var print = document.createElement("button");
   print.innerHTML="Print";
   print.setAttribute("id", "btn");
@@ -108,7 +133,6 @@ function buildTable()
     print.parentNode.removeChild(print);
     window.print();
   });
-  container.appendChild(print);
   var table = document.createElement("table");
   var tr = document.createElement("tr");
   var th = document.createElement("th");
@@ -157,6 +181,8 @@ function buildTable()
   tr.appendChild(td);
   table.appendChild(tr);
   container.appendChild(table)
+  container.appendChild(message);
+  container.appendChild(print);
   body.appendChild(container);
 }
 function fill(td, day)
