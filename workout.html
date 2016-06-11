@@ -5,10 +5,43 @@
   <link rel="stylesheet" type="text/css" href="workout.css" />
   <link rel="icon" href="../images/favicon.ico" type="image/ico" sizes="16x16"/>
   <meta charset="UTF-8">
-  <title>Workout</title>
+  <title>My Workout</title>
   <script src="workout.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 </head>
 <body>
+  <div id="top">My Workout</div>
+  <div id="container">
+    <div id="goalsText">What are you workout goals?</div>
+    <div id="goals">
+      <select>
+        <option>Fat Loss</option>
+        <option>Lean Muscle</option>
+        <option>Big Muscle</option>
+        <option>Just Staying in Shape</option>
+        <option>Cardio</option>
+      </select>
+    </div>
+    <div id="focusText">Is there any muscle group that you want to focus on?</div>
+    <div id="focus">
+      <input type="checkbox" value="Arms" id="arms">Arms</input><br>
+      <input type="checkbox" value="Shoulders" id="shoulders">Shoulders</input><br>
+      <input type="checkbox" value="Chest" id="chest">Chest</input><br>
+      <input type="checkbox" value="Back" id="back">Back</input><br>
+      <input type="checkbox" value="Abs" id="abs">Abs</input><br>
+      <input type="checkbox" value="Legs/Butt" id="legsButt">Legs/Butt</input><br>
+    </div>
+    <div id="daysText">What days are you available to workout?</div>
+    <div id="days">
+      <input type="checkbox" value="Monday" id="mon">Monday</input><br>
+      <input type="checkbox" value="Tuesday" id="tues">Tuesday</input><br>
+      <input type="checkbox" value="Wednesday" id="wed">Wednesday</input><br>
+      <input type="checkbox" value="Thursday" id="thurs">Thursday</input><br>
+      <input type="checkbox" value="Friday" id="fri">Friday</input><br>
+      <input type="checkbox" value="Saturday" id="sat">Saturday</input><br>
+      <input type="checkbox" value="Sunday" id="sun">Sunday</input><br>
+    </div>
+    <button id="btn">Generate Workout</button>
+  </div>
 </body>
 </html>
