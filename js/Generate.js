@@ -18,7 +18,7 @@ Generate.prototype.fat = function(upper, core, lower)
 }
 Generate.prototype.lean = function(arms, shoulders, chest, back, abs, legsButt)
 {
-  var workout;
+  var workout="";
   if (arms)
   {
     workout+="Chin-Ups<br>Dips<br>";
@@ -47,7 +47,7 @@ Generate.prototype.lean = function(arms, shoulders, chest, back, abs, legsButt)
 }
 Generate.prototype.big = function(arms, shoulders, chest, back, abs, legsButt)
 {
-  var workout;
+  var workout="";
   if (arms)
   {
     workout+="Curls<br>Concentration Curls<br>Tricep Push-Downs<br>";

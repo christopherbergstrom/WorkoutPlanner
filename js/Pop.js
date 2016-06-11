@@ -11,6 +11,7 @@ Pop.prototype.fat = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  upper = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -22,6 +23,7 @@ Pop.prototype.fat = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  core = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -33,6 +35,7 @@ Pop.prototype.fat = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  lower = check;
 }
 Pop.prototype.muscle = function()
 {
@@ -46,6 +49,7 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  arms = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -57,6 +61,7 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  shoulders = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -68,6 +73,7 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  chest = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -79,6 +85,7 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  back = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -90,6 +97,7 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  abs = check;
 
   var check = document.createElement("input");
   check.setAttribute("type", "checkbox");
@@ -101,4 +109,5 @@ Pop.prototype.muscle = function()
   focus.appendChild(span);
   var br = document.createElement("br");
   focus.appendChild(br);
+  legsButt = check;
 }

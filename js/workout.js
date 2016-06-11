@@ -45,6 +45,7 @@ window.onload = function()
   sun = document.getElementById("sun");
   btn = document.getElementById("btn");
   focus = document.getElementById("focus");
+  console.log(mon);
   btn.addEventListener("click", function()
   {
     while (body.firstChild)
@@ -54,6 +55,7 @@ window.onload = function()
     buildTable();
   });
   pop.fat();
+  console.log(upper);
 }
 function change()
 {
@@ -159,8 +161,6 @@ function buildTable()
 }
 function fill(td, day)
 {
-  console.log(day);
-  console.log(goalsSelect.value);
   if (day)
   {
     if (goalsSelect.value === "Fat Loss")
