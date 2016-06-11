@@ -23,43 +23,46 @@ body
   position: absolute;
   width: 15vw;
   left: 20%;
+  font-size: 1.5em;
 }
 #goals
 {
   position: absolute;
   left: 20%;
-  top: 15%;
+  top: 25%;
 }
 #focusText
 {
   position: absolute;
   width: 15vw;
   left: 40%;
+  font-size: 1.5em;
 }
 #focus
 {
   position: absolute;
   left: 40%;
-  top: 15%;
+  top: 25%;
 }
 #daysText
 {
   position: absolute;
   width: 15vw;
   left: 60%;
+  font-size: 1.5em;
 }
 #days
 {
   position: absolute;
   left: 60%;
-  top: 15%;
+  top: 25%;
 }
 #btn
 {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 60%;
+  top: 70%;
   width: 10%;
   left: 45%;
   border-radius: 8px;
@@ -71,4 +74,15 @@ body
 #btn:hover
 {
   background-color: #e6f7ff;
+}
+table
+{
+  margin-top: 10%;
+}
+table, th, td
+{
+  border: 2px solid black;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
